@@ -21,7 +21,6 @@ export default function Calendar({ date = new Date(), events = [] }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [calendar, setCalendar] = useState([]);
-  const [fullDate, setFullDate] = useState(date.getDate());
   const [currentYear, setCurrentYear] = useState(date.getFullYear());
   const [currentMonth, setCurrentMonth] = useState(date.getMonth());
   const [currentDate, setCurrentDate] = useState(date.getDate());
@@ -81,8 +80,8 @@ export default function Calendar({ date = new Date(), events = [] }) {
   useEffect(() => {
     renderCalender();
     setTextMonth(months[currentMonth]);
-    setFullDate(date.setFullYear(currentYear, currentMonth, currentDate));
-  }, [currentDate, currentMonth, currentYear]);
+    date.setFullYear(currentYear, currentMonth, currentDate);
+  }, [currentDate, currentMonth, currentYear, date, months]);
 
   return (
     <>
