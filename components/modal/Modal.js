@@ -14,7 +14,7 @@ export default function Modal({ isOpen, setIsOpen, data }) {
             {data.summary}
           </Dialog.Title>
           <Dialog.Description
-            className="text-sm text-left whitespace-pre-line"
+            className="py-4 text-sm text-left break-words whitespace-pre-line"
             dangerouslySetInnerHTML={{ __html: data.description }}
           ></Dialog.Description>
 
