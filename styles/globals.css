@@ -2,9 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #ccc;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #8a8a8a;
+    border: 1px solid #aaa;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: #fff;
   }
 }

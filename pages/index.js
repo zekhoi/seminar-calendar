@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { getCalendar } from "../utils/google";
 import Calendar from "../components/calendar/Calendar";
+import Event from "../components/calendar/Event";
 
 export default function seminar({ data }) {
   return (
@@ -9,7 +10,10 @@ export default function seminar({ data }) {
         <title>Seminar Schedule | Khoironi Kurnia Syah</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Calendar events={data} />
+      <div className="flex flex-col items-center justify-center min-h-screen gap-8 px-4 py-8 text-gray-700 md:flex-row bg-basecolor">
+        <Calendar events={data} />
+        <Event data={data} />
+      </div>
     </>
   );
 }
@@ -17,7 +21,7 @@ export default function seminar({ data }) {
 export async function getServerSideProps() {
   const date = new Date();
   const calendar = await getCalendar(
-    new Date(date.getFullYear(), date.getMonth() - 1, 1),
+    new Date(date.getFullYear(), date.getMonth() - 2, 1),
   );
 
   return {

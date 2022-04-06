@@ -13,6 +13,7 @@ module.exports = {
         secondary: "#69B2F6",
         success: "#3bde86",
         danger: "#ff6260",
+        warning: "#7F95E2",
       },
     },
   },
