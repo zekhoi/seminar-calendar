@@ -18,7 +18,7 @@ export default function MonthEvent({ data }) {
       <div className="w-full max-w-sm shadow-lg">
         <div className="py-5 pb-8 overflow-y-auto bg-white rounded-b h-80">
           <div className="px-8">
-            <h1 className="py-3 text-xl font-medium">Next Event</h1>
+            <h1 className="py-3 text-xl font-medium">Next Events</h1>
             {nextEvent.length > 0 ? (
               nextEvent.map((event) => (
                 <UpcomingEvent key={event.id} event={event} />
