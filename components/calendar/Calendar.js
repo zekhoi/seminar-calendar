@@ -174,7 +174,8 @@ export default function Calendar({ date = new Date(), events = [] }) {
                               <p
                                 className={`text-base font-medium ${
                                   day.date === currentDate &&
-                                  currentMonth === currentMonth
+                                  currentMonth === currentMonth &&
+                                  day.status === "current"
                                     ? "text-white"
                                     : day.status === "current"
                                     ? "opacity-100"
@@ -200,7 +201,7 @@ export default function Calendar({ date = new Date(), events = [] }) {
             </table>
           </div>
         </div>
-        <div className="py-5 pb-8 overflow-y-auto rounded-b bg-gray-50 h-72">
+        <div className="py-5 pb-8 overflow-y-auto rounded-b bg-gray-50 max-h-96 md:h-72">
           <div className="px-8">
             <h1 className="py-3 text-xl font-medium">
               Events on{" "}
