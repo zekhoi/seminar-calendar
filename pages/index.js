@@ -17,7 +17,7 @@ export default function seminar({ data }) {
 export async function getServerSideProps() {
   const date = new Date();
   const calendar = await getCalendar(
-    new Date(date.getFullYear() - 2, date.getMonth() - 2, 1),
+    new Date(date.getFullYear(), date.getMonth() - 1, 1),
   );
 
   return {
