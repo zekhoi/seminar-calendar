@@ -7,9 +7,14 @@ export default function PastEvent({ data }) {
   const [pastEvent, setPastEvent] = useState([]);
 
   useEffect(() => {
-    const tempEvent = data.filter((event) => {
-      return new Date(event.start.dateTime).getTime() < date;
-    });
+    const tempEvent = data
+      .filter((event) => {
+        return new Date(event.start.dateTime).getTime() < date;
+      })
+      .sort(
+        (valuea, valueb) =>
+          new Date(valueb.start.dateTime) - new Date(valuea.start.dateTime),
+      );
     setPastEvent(tempEvent);
   }, []);
   return (
