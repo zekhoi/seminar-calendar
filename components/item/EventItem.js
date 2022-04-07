@@ -10,7 +10,7 @@ export default function UpcomingEvent({ event }) {
       <div className="py-5 border-b border-gray-400 border-dashed">
         <p className="text-xs leading-3 text-gray-500">
           {isGoing(event).status === "ongoing" ? (
-            <span className="capitalize text-white bg-primary text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+            <span className="capitalize text-white bg-success text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
               On Going
             </span>
           ) : isGoing(event).status === "ended" ? (
