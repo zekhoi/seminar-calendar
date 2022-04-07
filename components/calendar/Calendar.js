@@ -32,21 +32,17 @@ export default function Calendar({ date = new Date(), events = [] }) {
   const previousMonth = () => {
     if (currentMonth <= 0) {
       setCurrentMonth(11);
-      setCurrentDate(1);
       setCurrentYear(currentYear - 1);
       return;
     }
-    setCurrentDate(1);
     setCurrentMonth(currentMonth - 1);
   };
   const nextMonth = () => {
     if (currentMonth >= 11) {
       setCurrentMonth(0);
-      setCurrentDate(1);
       setCurrentYear(currentYear + 1);
       return;
     }
-    setCurrentDate(1);
     setCurrentMonth(currentMonth + 1);
   };
 
