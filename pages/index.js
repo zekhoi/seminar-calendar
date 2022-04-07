@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import { getCalendar } from "../utils/google";
 import Calendar from "../components/calendar/Calendar";
 import Event from "../components/calendar/Event";
@@ -14,6 +15,19 @@ export default function seminar({ data }) {
         <Calendar events={data} />
         <Event data={data} />
       </div>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-TP8NHRCTN2"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-TP8NHRCTN2');
+        `}
+      </Script>
     </>
   );
 }
