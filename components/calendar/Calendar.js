@@ -22,7 +22,7 @@ export default function Calendar({ date = new Date(), events = [] }) {
     "November",
     "December",
   ];
-  const days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+  const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
   const [calendar, setCalendar] = useState([]);
   const [currentYear, setCurrentYear] = useState(date.getFullYear());
